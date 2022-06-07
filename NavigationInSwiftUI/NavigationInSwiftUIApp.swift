@@ -11,7 +11,7 @@ import SwiftUI
 struct NavigationInSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppCoordinator(viewModel: AppCoordinatorViewModel())
         }
     }
 }
