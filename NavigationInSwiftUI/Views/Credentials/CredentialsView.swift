@@ -8,23 +8,21 @@
 import SwiftUI
 
 struct CredentialsView: View {
-    @ObservedObject var viewModel: CredentialsViewModel
-    @State private var password: String = ""
-    @State private var email: String = ""
+    @StateObject var viewModel: CredentialsViewModel
 
     var body: some View {
             VStack {
 
                 Form {
                     Section(header: Text("🔐 Account details")) {
-                        TextField("Email", text: $email)
-                        SecureField("Password", text: $password)
+                        TextField("Email", text: $viewModel.email)
+                        SecureField("Password", text: $viewModel.password)
                     }
                 }
                 .background(Color.white)
 
                 Spacer()
-                
+
                 Button(action: {
                     viewModel.didTapNextButton?()
                 }) {
@@ -34,6 +32,7 @@ struct CredentialsView: View {
                         .border(Color.black, width: 1)
                         .padding()
                 }
+                .disabled(viewModel.isNextButtonDisabled)
             }
             .background(Color.white)
     }
