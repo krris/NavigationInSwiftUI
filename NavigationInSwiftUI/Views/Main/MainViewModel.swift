@@ -8,5 +8,6 @@
 import Foundation
 
 class MainViewModel: ObservableObject {
+    var userName: String = "[TODO]"
     var didTapSignOutButton: (() -> ())?
 }

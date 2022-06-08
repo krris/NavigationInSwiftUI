@@ -11,13 +11,25 @@ struct MainView: View {
     @ObservedObject var viewModel: MainViewModel
 
     var body: some View {
+
         VStack {
-            Text("Main 👋")
-                .font(.title)
-            Button("Sign out") {
+            Spacer()
+            Text("Hello \(viewModel.userName)👋")
+                .font(.largeTitle)
+                .foregroundColor(Color.black)
+            Spacer()
+
+            Button(action: {
                 viewModel.didTapSignOutButton?()
+            }) {
+                Text("Sign out")
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .border(Color.black, width: 1)
+                    .padding()
             }
         }
+        .background(Color.white)
     }
 }
 
