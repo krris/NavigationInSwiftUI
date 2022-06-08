@@ -165,13 +165,13 @@
 		F587E5E3284FE051005D1A99 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F587E603284FE91B005D1A99 /* Main */,
-				F587E5FD284FE186005D1A99 /* ConfirmPin */,
 				F587E5F1284FE0E3005D1A99 /* Welcome */,
-				F587E5F0284FE0D9005D1A99 /* Credentials */,
 				F587E5F2284FE0E9005D1A99 /* TermsOfService */,
-				F587E5FC284FE172005D1A99 /* PersonalInfo */,
+				F587E5F0284FE0D9005D1A99 /* Credentials */,
 				F587E5F9284FE13E005D1A99 /* NewPin */,
+				F587E5FD284FE186005D1A99 /* ConfirmPin */,
+				F587E5FC284FE172005D1A99 /* PersonalInfo */,
+				F587E603284FE91B005D1A99 /* Main */,
 			);
 			path = Views;
 			sourceTree = "<group>";

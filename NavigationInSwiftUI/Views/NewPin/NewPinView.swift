@@ -8,15 +8,33 @@
 import SwiftUI
 
 struct NewPinView: View {
-    @ObservedObject var viewModel: NewPinViewModel
+    @StateObject var viewModel: NewPinViewModel
 
     var body: some View {
         VStack {
-            Text("NewPinView")
-            Button("Next") {
-                viewModel.didTapNextButton?()
+
+            Form {
+                Section(header: Text("🔐 Create new pin")) {
+                    SecureField("PIN", text: $viewModel.pin)
+                        .keyboardType(.numberPad)
+                }
             }
+            .background(Color.white)
+
+            Spacer()
+
+            Button(action: {
+                viewModel.didTapNextButton?()
+            }) {
+                Text("Next")
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .border(Color.black, width: 1)
+                    .padding()
+            }
+            .disabled(viewModel.isNextButtonDisabled)
         }
+        .background(Color.white)
     }
 }
 
