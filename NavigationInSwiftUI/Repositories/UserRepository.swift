@@ -9,6 +9,7 @@ import Foundation
 
 protocol UserRepositoryProtocol {
     var user: User? { get }
+    var userDraft: User? { get set }
     var isSignedIn: Bool { get}
     func save(_ user: User)
 }
@@ -25,6 +26,7 @@ final class UserRepository: UserRepositoryProtocol {
     var user: User? {
         dataStorage.getData(for: Constants.userKey)
     }
+    var userDraft: User?
 
     private(set) var isSignedIn: Bool = false
 
