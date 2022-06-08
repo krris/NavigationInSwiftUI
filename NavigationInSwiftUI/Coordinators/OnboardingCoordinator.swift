@@ -33,8 +33,11 @@ class OnboardingRoutesProvider: ObservableObject {
 
     private func displayCredentialsScreen() {
         let viewModel = CredentialsViewModel()
-        viewModel.didTapNextButton = { [weak self] in
-            self?.displayPersonalInfoScreen()
+        viewModel.routeAction = { [weak self] action in
+            switch action {
+            case .didTapNextButton:
+                self?.displayPersonalInfoScreen()
+            }
         }
         let screen = OnboardingCoordinator.Screen.credentials(viewModel)
         routes.push(screen)
