@@ -18,6 +18,10 @@ final class AppRoutesProvider: ObservableObject {
     func startSignedInCoordinator() {
         routes = [.root(.signedIn)]
     }
+
+    func startOnboardingCoordinator() {
+        routes = [.root(.onboarding)]
+    }
 }
 
 struct AppCoordinator: View {
@@ -30,12 +34,19 @@ struct AppCoordinator: View {
     @ObservedObject var appRoutesProvider = AppRoutesProvider()
 
     private let onboardingRoutesProvider: OnboardingRoutesProvider
+    private let signedInRoutesProvider: SignedInRoutesProvider
 
     init() {
         // TODO inject
         onboardingRoutesProvider = OnboardingRoutesProvider()
+        signedInRoutesProvider = SignedInRoutesProvider()
+
         onboardingRoutesProvider.didComplete = { [appRoutesProvider] in
             appRoutesProvider.startSignedInCoordinator()
+        }
+
+        signedInRoutesProvider.didComplete = { [appRoutesProvider] in
+            appRoutesProvider.startOnboardingCoordinator()
         }
     }
 
@@ -43,9 +54,8 @@ struct AppCoordinator: View {
         Router($appRoutesProvider.routes) { screen, _ in
             switch screen {
             case .signedIn:
-                SignedInCoordinator()
+                SignedInCoordinator(routesProvider: signedInRoutesProvider)
             case .onboarding:
-
                 OnboardingCoordinator(routesProvider: onboardingRoutesProvider)
             }
         }

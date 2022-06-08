@@ -11,6 +11,8 @@ import FlowStacks
 final class SignedInRoutesProvider: ObservableObject {
     @Published var routes: Routes<SignedInCoordinator.Screen> = []
 
+    var didComplete: (() -> ())?
+
     init() {
         displayMainScreen()
     }
@@ -18,7 +20,7 @@ final class SignedInRoutesProvider: ObservableObject {
     func displayMainScreen() {
         let viewModel = MainViewModel()
         viewModel.didTapSignOutButton = { [weak self] in
-            print("Sign out")
+            self?.didComplete?()
         }
         let screen = SignedInCoordinator.Screen.main(viewModel)
         routes.push(screen)
@@ -28,7 +30,7 @@ final class SignedInRoutesProvider: ObservableObject {
 
 // Display main screen
 struct SignedInCoordinator: View {
-    @ObservedObject var routesProvider = SignedInRoutesProvider()
+    @ObservedObject var routesProvider: SignedInRoutesProvider
 
     enum Screen {
         case main(MainViewModel)

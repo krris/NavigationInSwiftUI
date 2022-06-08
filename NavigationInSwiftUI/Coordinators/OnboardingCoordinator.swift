@@ -61,10 +61,19 @@ class OnboardingRoutesProvider: ObservableObject {
     private func displayConfirmPinScreen() {
         let viewModel = ConfirmPinViewModel()
         viewModel.didTapNextButton = { [weak self] in
-            self?.didComplete?()
+            self?.completeFlow()
         }
         let screen = OnboardingCoordinator.Screen.confirmPin(viewModel)
         routes.push(screen)
+    }
+
+    private func completeFlow() {
+        didComplete?()
+        Task { @MainActor in
+            RouteSteps.withDelaysIfUnsupported(self, \.routes) {
+              $0.goBackToRoot()
+            }
+        }
     }
 }
 
