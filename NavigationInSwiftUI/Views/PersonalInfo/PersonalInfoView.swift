@@ -12,11 +12,30 @@ struct PersonalInfoView: View {
 
     var body: some View {
         VStack {
-            Text("PersonalInfoView")
-            Button("Next") {
-                viewModel.didTapNextButton?()
+            Form {
+                Section(header: Text("👩‍💻 Personal information")) {
+                    TextField("First name", text: $viewModel.firstName)
+                    TextField("Last name", text: $viewModel.lastName)
+                    TextField("Phone number", text: $viewModel.phoneNumber)
+                        .keyboardType(.phonePad)
+                }
             }
+            .background(Color.white)
+
+            Spacer()
+
+            Button(action: {
+                viewModel.didTapNextButton?()
+            }) {
+                Text("Next")
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .border(Color.black, width: 1)
+                    .padding()
+            }
+            .disabled(viewModel.isNextButtonDisabled)
         }
+        .background(Color.white)
     }
 }
 
