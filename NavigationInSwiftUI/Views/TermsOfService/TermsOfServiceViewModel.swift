@@ -6,7 +6,10 @@
 //
 
 import Foundation
+import SwiftUI
 
 class TermsOfServiceViewModel: ObservableObject {
     var didTapNextButton: (() -> ())?
+
+    @Published var areTermsAccepted: Bool = false
 }

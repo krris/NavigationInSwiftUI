@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct TermsOfServiceView: View {
-    @ObservedObject var viewModel: TermsOfServiceViewModel
-    @State private var areTermsAccepted = false
+    @StateObject var viewModel: TermsOfServiceViewModel
 
     var body: some View {
         VStack {
@@ -17,7 +16,7 @@ struct TermsOfServiceView: View {
             Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
                     .foregroundColor(Color.black)
 
-                Toggle(isOn: $areTermsAccepted) {
+                Toggle(isOn: $viewModel.areTermsAccepted) {
                     Text("Accept")
                         .foregroundColor(Color.black)
                 }
@@ -35,6 +34,7 @@ struct TermsOfServiceView: View {
                     .border(Color.black, width: 1)
                     .padding()
             }
+            .disabled(viewModel.areTermsAccepted == false)
         }
         .background(Color.white)
     }
