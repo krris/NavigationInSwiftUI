@@ -12,10 +12,17 @@ struct MainView: View {
 
     var body: some View {
         VStack {
-            Text("Main")
+            Text("Main 👋")
+                .font(.title)
             Button("Sign out") {
                 viewModel.didTapSignOutButton?()
             }
         }
+    }
+}
+
+struct MainView_Previews: PreviewProvider {
+    static var previews: some View {
+        MainView(viewModel: MainViewModel())
     }
 }

@@ -19,3 +19,9 @@ struct ConfirmPinView: View {
         }
     }
 }
+
+struct ConfirmPinView_Previews: PreviewProvider {
+    static var previews: some View {
+        ConfirmPinView(viewModel: ConfirmPinViewModel())
+    }
+}

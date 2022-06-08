@@ -13,12 +13,34 @@ struct CredentialsView: View {
     @State private var email: String = ""
 
     var body: some View {
-        VStack {
-            TextField("Enter your email", text: $email)
-            SecureField("Enter a password", text: $password)
-            Button("Next") {
-                viewModel.didTapNextButton?()
+            VStack {
+
+                Form {
+                    Section(header: Text("🔐 Account details")) {
+                        TextField("Email", text: $email)
+                        SecureField("Password", text: $password)
+                    }
+                }
+                .background(Color.white)
+
+                Spacer()
+                
+                Button(action: {
+                    viewModel.didTapNextButton?()
+                }) {
+                    Text("Next")
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .border(Color.black, width: 1)
+                        .padding()
+                }
             }
-        }
+            .background(Color.white)
+    }
+}
+
+struct CredentialsView_Previews: PreviewProvider {
+    static var previews: some View {
+        CredentialsView(viewModel: CredentialsViewModel())
     }
 }

@@ -19,3 +19,9 @@ struct NewPinView: View {
         }
     }
 }
+
+struct NewPinView_Previews: PreviewProvider {
+    static var previews: some View {
+        NewPinView(viewModel: NewPinViewModel())
+    }
+}

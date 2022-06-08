@@ -12,10 +12,28 @@ struct WelcomeView: View {
 
     var body: some View {
         VStack {
-            Text("Welcome")
-            Button("Next") {
+            Spacer()
+            Text("Welcome 👋")
+                .font(.largeTitle)
+                .foregroundColor(Color.black)
+            Spacer()
+
+            Button(action: {
                 viewModel.didTapNextButton?()
+            }) {
+                Text("Continue")
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .border(Color.black, width: 1)
+                    .padding()
             }
         }
+        .background(Color.white)
+    }
+}
+
+struct WelcomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        WelcomeView(viewModel: WelcomeViewModel())
     }
 }
