@@ -14,7 +14,7 @@ struct NewPinView: View {
         VStack {
 
             Form {
-                Section(header: Text("🔐 Create new pin")) {
+                Section(header: Text("🔐 Create new PIN")) {
                     SecureField("PIN", text: $viewModel.pin)
                         .keyboardType(.numberPad)
                 }

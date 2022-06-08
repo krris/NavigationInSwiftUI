@@ -12,11 +12,28 @@ struct ConfirmPinView: View {
 
     var body: some View {
         VStack {
-            Text("Confirm")
-            Button("Next") {
-                viewModel.didTapNextButton?()
+            Form {
+                Section(header: Text("🔍 Confirm your PIN")) {
+                    SecureField("PIN", text: $viewModel.confirmedPin)
+                        .keyboardType(.numberPad)
+                }
             }
+            .background(Color.white)
+
+            Spacer()
+
+            Button(action: {
+                viewModel.didTapNextButton?()
+            }) {
+                Text("Confirm")
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .border(Color.black, width: 1)
+                    .padding()
+            }
+            .disabled(viewModel.isNextButtonDisabled)
         }
+        .background(Color.white)
     }
 }
 
