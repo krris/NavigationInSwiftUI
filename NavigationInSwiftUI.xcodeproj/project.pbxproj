@@ -13,6 +13,9 @@
 		F54BC82C284D0F16006711CD /* NavigationInSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54BC82B284D0F16006711CD /* NavigationInSwiftUITests.swift */; };
 		F54BC836284D0F16006711CD /* NavigationInSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54BC835284D0F16006711CD /* NavigationInSwiftUIUITests.swift */; };
 		F54BC838284D0F16006711CD /* NavigationInSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54BC837284D0F16006711CD /* NavigationInSwiftUIUITestsLaunchTests.swift */; };
+		F579AF7C285123C700773E6A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F579AF7B285123C700773E6A /* User.swift */; };
+		F579AF7F2851339A00773E6A /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F579AF7E2851339A00773E6A /* UserRepository.swift */; };
+		F579AF812851340000773E6A /* SafeDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F579AF802851340000773E6A /* SafeDataStorage.swift */; };
 		F587E5DB284F8309005D1A99 /* FlowStacks in Frameworks */ = {isa = PBXBuildFile; productRef = F587E5DA284F8309005D1A99 /* FlowStacks */; };
 		F587E5DD284FDB98005D1A99 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587E5DC284FDB98005D1A99 /* AppCoordinator.swift */; };
 		F587E5DF284FDC8F005D1A99 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587E5DE284FDC8F005D1A99 /* OnboardingCoordinator.swift */; };
@@ -60,6 +63,9 @@
 		F54BC831284D0F16006711CD /* NavigationInSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavigationInSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F54BC835284D0F16006711CD /* NavigationInSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationInSwiftUIUITests.swift; sourceTree = "<group>"; };
 		F54BC837284D0F16006711CD /* NavigationInSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationInSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F579AF7B285123C700773E6A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F579AF7E2851339A00773E6A /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		F579AF802851340000773E6A /* SafeDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeDataStorage.swift; sourceTree = "<group>"; };
 		F587E5DC284FDB98005D1A99 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		F587E5DE284FDC8F005D1A99 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		F587E5E0284FDCB1005D1A99 /* SignedInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInCoordinator.swift; sourceTree = "<group>"; };
@@ -128,6 +134,8 @@
 		F54BC819284D0F16006711CD /* NavigationInSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				F579AF7D2851337F00773E6A /* Repositories */,
+				F579AF7A285123A100773E6A /* Models */,
 				F587E602284FE1AA005D1A99 /* Coordinators */,
 				F587E5E3284FE051005D1A99 /* Views */,
 				F54BC81A284D0F16006711CD /* NavigationInSwiftUIApp.swift */,
@@ -160,6 +168,23 @@
 				F54BC837284D0F16006711CD /* NavigationInSwiftUIUITestsLaunchTests.swift */,
 			);
 			path = NavigationInSwiftUIUITests;
+			sourceTree = "<group>";
+		};
+		F579AF7A285123A100773E6A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F579AF7B285123C700773E6A /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F579AF7D2851337F00773E6A /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				F579AF7E2851339A00773E6A /* UserRepository.swift */,
+				F579AF802851340000773E6A /* SafeDataStorage.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		F587E5E3284FE051005D1A99 /* Views */ = {
@@ -388,6 +413,7 @@
 				F587E5F4284FE115005D1A99 /* PersonalInfoView.swift in Sources */,
 				F587E601284FE1A0005D1A99 /* ConfirmPinViewModel.swift in Sources */,
 				F587E5E1284FDCB1005D1A99 /* SignedInCoordinator.swift in Sources */,
+				F579AF812851340000773E6A /* SafeDataStorage.swift in Sources */,
 				F587E5E5284FE06C005D1A99 /* WelcomeView.swift in Sources */,
 				F587E5DD284FDB98005D1A99 /* AppCoordinator.swift in Sources */,
 				F587E5E7284FE095005D1A99 /* WelcomeViewModel.swift in Sources */,
@@ -403,6 +429,8 @@
 				F587E5EF284FE0CF005D1A99 /* CredentialsView.swift in Sources */,
 				F587E5FF284FE196005D1A99 /* ConfirmPinView.swift in Sources */,
 				F587E607284FE935005D1A99 /* MainViewModel.swift in Sources */,
+				F579AF7F2851339A00773E6A /* UserRepository.swift in Sources */,
+				F579AF7C285123C700773E6A /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
