@@ -7,15 +7,14 @@
 
 import Foundation
 
-class MainViewModel: ObservableObject {
+final class MainViewModel: ObservableObject {
     enum RouteAction {
         case didTapSignOutButton
     }
 
     var routeAction: ((RouteAction) -> Void)?
 
-    // TODO: inject
-    private var userRepository: UserRepositoryProtocol = UserRepository.shared
+    private var userRepository: UserRepositoryProtocol
 
     var userName: String {
         guard let user = userRepository.user else {
@@ -23,6 +22,10 @@ class MainViewModel: ObservableObject {
             return ""
         }
         return "\(user.firstName) \(user.lastName)"
+    }
+
+    init(userRepository: UserRepositoryProtocol = UserRepository.shared) {
+        self.userRepository = userRepository
     }
 
     func didTapSignOutButton() {

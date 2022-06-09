@@ -8,8 +8,16 @@
 import Foundation
 import SwiftUI
 
-class TermsOfServiceViewModel: ObservableObject {
-    var didTapNextButton: (() -> ())?
+final class TermsOfServiceViewModel: ObservableObject {
+    enum RouteAction {
+        case didTapNextButton
+    }
+
+    var routeAction: ((RouteAction) -> Void)?
 
     @Published var areTermsAccepted: Bool = false
+
+    func didTapNextButton() {
+        routeAction?(.didTapNextButton)
+    }
 }

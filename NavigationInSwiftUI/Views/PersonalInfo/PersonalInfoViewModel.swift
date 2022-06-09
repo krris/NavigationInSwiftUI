@@ -7,7 +7,7 @@
 
 import Combine
 
-class PersonalInfoViewModel: ObservableObject {
+final class PersonalInfoViewModel: ObservableObject {
     enum RouteAction {
         case didTapNextButton
     }
@@ -18,8 +18,11 @@ class PersonalInfoViewModel: ObservableObject {
     @Published var lastName: String = ""
     @Published var phoneNumber: String = ""
 
-    // TODO: inject
-    private var userRepository: UserRepositoryProtocol = UserRepository.shared
+    private var userRepository: UserRepositoryProtocol
+
+    init(userRepository: UserRepositoryProtocol = UserRepository.shared) {
+        self.userRepository = userRepository
+    }
 
     private var isFormValid: Bool {
         !firstName.isEmpty &&

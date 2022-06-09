@@ -7,6 +7,14 @@
 
 import Foundation
 
-class WelcomeViewModel: ObservableObject {
-    var didTapNextButton: (() -> ())?
+final class WelcomeViewModel: ObservableObject {
+    enum RouteAction {
+        case didTapNextButton
+    }
+
+    var routeAction: ((RouteAction) -> Void)?
+
+    func didTapNextButton() {
+        routeAction?(.didTapNextButton)
+    }
 }

@@ -8,15 +8,18 @@
 import SwiftUI
 import FlowStacks
 
-class OnboardingRoutesProvider: ObservableObject {
+final class OnboardingRoutesProvider: ObservableObject {
     @Published var routes: Routes<OnboardingCoordinator.Screen> = []
 
     var didComplete: (() -> ())?
 
     init() {
         let viewModel = WelcomeViewModel()
-        viewModel.didTapNextButton = { [weak self] in
-            self?.displayTermsOfServiceScreen()
+        viewModel.routeAction = { [weak self] action in
+            switch action {
+            case .didTapNextButton:
+                self?.displayTermsOfServiceScreen()
+            }
         }
         let screen = OnboardingCoordinator.Screen.welcome(viewModel)
         routes.presentSheet(screen, embedInNavigationView: true)
@@ -24,8 +27,11 @@ class OnboardingRoutesProvider: ObservableObject {
 
     private func displayTermsOfServiceScreen() {
         let viewModel = TermsOfServiceViewModel()
-        viewModel.didTapNextButton = { [weak self] in
-            self?.displayCredentialsScreen()
+        viewModel.routeAction = { [weak self] action in
+            switch action {
+            case .didTapNextButton:
+                self?.displayCredentialsScreen()
+            }
         }
         let screen = OnboardingCoordinator.Screen.termsOfService(viewModel)
         routes.push(screen)

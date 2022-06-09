@@ -7,7 +7,7 @@
 
 import Combine
 
-class ConfirmPinViewModel: ObservableObject {
+final class ConfirmPinViewModel: ObservableObject {
     enum RouteAction {
         case didTapNextButton
     }
@@ -16,8 +16,11 @@ class ConfirmPinViewModel: ObservableObject {
 
     @Published var confirmedPin: String = ""
 
-    // TODO: inject
-    private var userRepository: UserRepositoryProtocol = UserRepository.shared
+    private var userRepository: UserRepositoryProtocol
+
+    init(userRepository: UserRepositoryProtocol = UserRepository.shared) {
+        self.userRepository = userRepository
+    }
 
     var isNextButtonDisabled: Bool {
         !isPinValid

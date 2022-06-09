@@ -17,11 +17,14 @@ final class CredentialsViewModel: ObservableObject {
     @Published var password: String = ""
     @Published var email: String = ""
 
-    // TODO: inject
-    private var userRepository: UserRepositoryProtocol = UserRepository.shared
+    private var userRepository: UserRepositoryProtocol
 
     var isNextButtonDisabled: Bool {
         isFormValid == false
+    }
+
+    init(userRepository: UserRepositoryProtocol = UserRepository.shared) {
+        self.userRepository = userRepository
     }
 
     func didTapNextButton() {

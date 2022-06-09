@@ -7,7 +7,7 @@
 
 import Combine
 
-class NewPinViewModel: ObservableObject {
+final class NewPinViewModel: ObservableObject {
     enum RouteAction {
         case didTapNextButton
     }
@@ -16,8 +16,11 @@ class NewPinViewModel: ObservableObject {
 
     @Published var pin: String = ""
 
-    // TODO: inject
-    private var userRepository: UserRepositoryProtocol = UserRepository.shared
+    private var userRepository: UserRepositoryProtocol
+
+    init(userRepository: UserRepositoryProtocol = UserRepository.shared) {
+        self.userRepository = userRepository
+    }
 
     var isNextButtonDisabled: Bool {
         pin.isEmpty

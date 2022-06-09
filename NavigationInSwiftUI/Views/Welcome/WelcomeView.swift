@@ -18,7 +18,7 @@ struct WelcomeView: View {
             Spacer()
 
             Button(action: {
-                viewModel.didTapNextButton?()
+                viewModel.didTapNextButton()
             }) {
                 Text("Continue")
                     .padding()
