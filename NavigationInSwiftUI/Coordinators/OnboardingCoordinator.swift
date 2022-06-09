@@ -45,8 +45,11 @@ class OnboardingRoutesProvider: ObservableObject {
 
     private func displayPersonalInfoScreen() {
         let viewModel = PersonalInfoViewModel()
-        viewModel.didTapNextButton = { [weak self] in
-            self?.displayNewPinScreen()
+        viewModel.routeAction = { [weak self] action in
+            switch action {
+            case .didTapNextButton:
+                self?.displayNewPinScreen()
+            }
         }
         let screen = OnboardingCoordinator.Screen.personalInfo(viewModel)
         routes.push(screen)
@@ -54,8 +57,11 @@ class OnboardingRoutesProvider: ObservableObject {
 
     private func displayNewPinScreen() {
         let viewModel = NewPinViewModel()
-        viewModel.didTapNextButton = { [weak self] in
-            self?.displayConfirmPinScreen()
+        viewModel.routeAction = { [weak self] action in
+            switch action {
+            case .didTapNextButton:
+                self?.displayConfirmPinScreen()
+            }
         }
         let screen = OnboardingCoordinator.Screen.newPin(viewModel)
         routes.push(screen)
@@ -63,8 +69,11 @@ class OnboardingRoutesProvider: ObservableObject {
 
     private func displayConfirmPinScreen() {
         let viewModel = ConfirmPinViewModel()
-        viewModel.didTapNextButton = { [weak self] in
-            self?.completeFlow()
+        viewModel.routeAction = { [weak self] action in
+            switch action {
+            case .didTapNextButton:
+                self?.completeFlow()
+            }
         }
         let screen = OnboardingCoordinator.Screen.confirmPin(viewModel)
         routes.push(screen)

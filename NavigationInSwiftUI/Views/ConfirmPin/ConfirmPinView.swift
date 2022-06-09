@@ -23,7 +23,7 @@ struct ConfirmPinView: View {
             Spacer()
 
             Button(action: {
-                viewModel.didTapNextButton?()
+                viewModel.didTapNextButton()
             }) {
                 Text("Confirm")
                     .padding()

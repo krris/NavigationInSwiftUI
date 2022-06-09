@@ -8,15 +8,35 @@
 import Combine
 
 class PersonalInfoViewModel: ObservableObject {
+    enum RouteAction {
+        case didTapNextButton
+    }
+
+    var routeAction: ((RouteAction) -> Void)?
+
     @Published var firstName: String = ""
     @Published var lastName: String = ""
     @Published var phoneNumber: String = ""
 
-    var didTapNextButton: (() -> ())?
+    // TODO: inject
+    private var userRepository: UserRepositoryProtocol = UserRepository.shared
+
+    private var isFormValid: Bool {
+        !firstName.isEmpty &&
+        !lastName.isEmpty &&
+        !phoneNumber.isEmpty
+    }
 
     var isNextButtonDisabled: Bool {
-        firstName.isEmpty ||
-        lastName.isEmpty ||
-        phoneNumber.isEmpty
+        isFormValid == false
+    }
+
+    func didTapNextButton() {
+        guard isFormValid else { return }
+        userRepository.userDraft?.firstName = firstName
+        userRepository.userDraft?.lastName = lastName
+        userRepository.userDraft?.phoneNumber = phoneNumber
+
+        routeAction?(.didTapNextButton)
     }
 }

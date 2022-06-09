@@ -26,6 +26,7 @@ final class CredentialsViewModel: ObservableObject {
 
     func didTapNextButton() {
         guard isFormValid else { return }
+        userRepository.userDraft = User()
         userRepository.userDraft?.password = password
         userRepository.userDraft?.email = email
 

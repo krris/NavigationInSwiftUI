@@ -8,12 +8,37 @@
 import Combine
 
 class ConfirmPinViewModel: ObservableObject {
+    enum RouteAction {
+        case didTapNextButton
+    }
+
+    var routeAction: ((RouteAction) -> Void)?
+
     @Published var confirmedPin: String = ""
 
-    var didTapNextButton: (() -> ())?
+    // TODO: inject
+    private var userRepository: UserRepositoryProtocol = UserRepository.shared
 
     var isNextButtonDisabled: Bool {
-        // TODO: compare with a previously saved
-        confirmedPin != "7777"
+        !isPinValid
+    }
+
+    private var isPinValid: Bool {
+        guard let pin = userRepository.userDraft?.pin,
+              pin.isEmpty == false else {
+            return false
+        }
+
+        return pin == confirmedPin
+    }
+
+    func didTapNextButton() {
+        guard isPinValid else { return }
+
+        // TODO: move to userRepository
+        guard let userDraft = userRepository.userDraft else { return }
+        userRepository.save(userDraft)
+
+        routeAction?(.didTapNextButton)
     }
 }

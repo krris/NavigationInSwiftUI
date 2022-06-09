@@ -8,11 +8,29 @@
 import Combine
 
 class NewPinViewModel: ObservableObject {
+    enum RouteAction {
+        case didTapNextButton
+    }
+
+    var routeAction: ((RouteAction) -> Void)?
+
     @Published var pin: String = ""
 
-    var didTapNextButton: (() -> ())?
+    // TODO: inject
+    private var userRepository: UserRepositoryProtocol = UserRepository.shared
 
     var isNextButtonDisabled: Bool {
         pin.isEmpty
+    }
+
+    private var isFormValid: Bool {
+        !pin.isEmpty
+    }
+
+    func didTapNextButton() {
+        guard isFormValid else { return }
+        userRepository.userDraft?.pin = pin
+
+        routeAction?(.didTapNextButton)
     }
 }

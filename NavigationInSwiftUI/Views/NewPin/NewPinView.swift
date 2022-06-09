@@ -24,7 +24,7 @@ struct NewPinView: View {
             Spacer()
 
             Button(action: {
-                viewModel.didTapNextButton?()
+                viewModel.didTapNextButton()
             }) {
                 Text("Next")
                     .padding()
