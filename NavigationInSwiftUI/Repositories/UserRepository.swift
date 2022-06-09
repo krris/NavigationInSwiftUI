@@ -12,6 +12,7 @@ protocol UserRepositoryProtocol {
     var userDraft: User? { get set }
     var isSignedIn: Bool { get}
     func save(_ user: User)
+    func signOut()
 }
 
 final class UserRepository: UserRepositoryProtocol {
@@ -38,5 +39,9 @@ final class UserRepository: UserRepositoryProtocol {
             data: user,
             for: Constants.userKey
         )
+    }
+
+    func signOut() {
+        dataStorage.removeObject(for: Constants.userKey)
     }
 }

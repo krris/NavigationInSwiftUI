@@ -19,6 +19,10 @@ final class SafeDataStorage {
         }
     }
 
+    func removeObject(for key: String) {
+        userDefaults.removeObject(forKey: key)
+    }
+
     func getData<CodableObject: Decodable>(for key: String) -> CodableObject? {
         guard let savedObject = userDefaults.object(forKey: key) as? Data else {
             return nil

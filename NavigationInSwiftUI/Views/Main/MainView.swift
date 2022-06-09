@@ -20,7 +20,7 @@ struct MainView: View {
             Spacer()
 
             Button(action: {
-                viewModel.didTapSignOutButton?()
+                viewModel.didTapSignOutButton()
             }) {
                 Text("Sign out")
                     .padding()

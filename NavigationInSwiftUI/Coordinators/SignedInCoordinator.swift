@@ -19,8 +19,11 @@ final class SignedInRoutesProvider: ObservableObject {
 
     func displayMainScreen() {
         let viewModel = MainViewModel()
-        viewModel.didTapSignOutButton = { [weak self] in
-            self?.didComplete?()
+        viewModel.routeAction = { [weak self] action in
+            switch action {
+            case .didTapSignOutButton:
+                self?.didComplete?()
+            }
         }
         let screen = SignedInCoordinator.Screen.main(viewModel)
         routes.push(screen)

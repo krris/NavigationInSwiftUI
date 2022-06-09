@@ -8,6 +8,26 @@
 import Foundation
 
 class MainViewModel: ObservableObject {
-    var userName: String = "[TODO]"
-    var didTapSignOutButton: (() -> ())?
+    enum RouteAction {
+        case didTapSignOutButton
+    }
+
+    var routeAction: ((RouteAction) -> Void)?
+
+    // TODO: inject
+    private var userRepository: UserRepositoryProtocol = UserRepository.shared
+
+    var userName: String {
+        guard let user = userRepository.user else {
+            assertionFailure("Signed in user is expected on this screen")
+            return ""
+        }
+        return user.firstName
+    }
+
+    func didTapSignOutButton() {
+        userRepository.signOut()
+
+        routeAction?(.didTapSignOutButton)
+    }
 }
