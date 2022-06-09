@@ -9,10 +9,16 @@ import SwiftUI
 import FlowStacks
 
 final class AppRoutesProvider: ObservableObject {
-    @Published var routes: Routes<AppCoordinator.Screen> = [.root(.onboarding)]
+    @Published var routes: Routes<AppCoordinator.Screen> = []
+
+    private var userRepository: UserRepositoryProtocol = UserRepository.shared
 
     init() {
-        // TODO: decide if onboarding or welcome
+        if userRepository.isSignedIn {
+            startSignedInCoordinator()
+        } else {
+            startOnboardingCoordinator()
+        }
     }
 
     func startSignedInCoordinator() {

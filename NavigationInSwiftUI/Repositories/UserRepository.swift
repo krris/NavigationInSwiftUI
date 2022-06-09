@@ -29,7 +29,9 @@ final class UserRepository: UserRepositoryProtocol {
     }
     var userDraft: User?
 
-    private(set) var isSignedIn: Bool = false
+    var isSignedIn: Bool {
+        user != nil
+    }
 
     // TODO: inject
     private let dataStorage = SafeDataStorage()

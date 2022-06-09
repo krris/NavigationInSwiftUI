@@ -22,7 +22,7 @@ class MainViewModel: ObservableObject {
             assertionFailure("Signed in user is expected on this screen")
             return ""
         }
-        return user.firstName
+        return "\(user.firstName) \(user.lastName)"
     }
 
     func didTapSignOutButton() {
