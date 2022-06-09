@@ -15,7 +15,6 @@ struct WelcomeView: View {
             Spacer()
             Text("Welcome 👋")
                 .font(.largeTitle)
-                .foregroundColor(Color.black)
             Spacer()
 
             Button(action: {
@@ -24,11 +23,10 @@ struct WelcomeView: View {
                 Text("Continue")
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .border(Color.black, width: 1)
+                    .border(Color(UIColor.label), width: 1)
                     .padding()
             }
         }
-        .background(Color.white)
     }
 }
 

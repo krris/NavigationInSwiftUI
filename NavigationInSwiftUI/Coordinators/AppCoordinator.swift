@@ -14,6 +14,12 @@ final class AppRoutesProvider: ObservableObject {
     private var userRepository: UserRepositoryProtocol = UserRepository.shared
 
     init() {
+        // TODO: move to better place
+//        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.black]
+//        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.black]
+//        UILabel.appearance().textColor = .black
+//        UITableView.appearance().backgroundColor = UIColor.systemBackground
+
         if userRepository.isSignedIn {
             startSignedInCoordinator()
         } else {

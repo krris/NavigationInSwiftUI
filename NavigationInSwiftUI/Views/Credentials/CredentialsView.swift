@@ -11,30 +11,30 @@ struct CredentialsView: View {
     @StateObject var viewModel: CredentialsViewModel
 
     var body: some View {
-            VStack {
+        VStack {
 
-                Form {
-                    Section(header: Text("🔐 Account details")) {
-                        TextField("Email", text: $viewModel.email)
-                        SecureField("Password", text: $viewModel.password)
-                    }
+            Form {
+                Section(header: Text("🔐 Account details")) {
+                    TextField("Email", text: $viewModel.email)
+                    SecureField("Password", text: $viewModel.password)
                 }
-                .background(Color.white)
-
-                Spacer()
-
-                Button(action: {
-                    viewModel.didTapNextButton()
-                }) {
-                    Text("Next")
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .border(Color.black, width: 1)
-                        .padding()
-                }
-                .disabled(viewModel.isNextButtonDisabled)
             }
-            .background(Color.white)
+
+            Spacer()
+
+            Button(action: {
+                viewModel.didTapNextButton()
+            }) {
+                Text("Next")
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .border(Color(UIColor.label), width: 1)
+                    .padding()
+            }
+            .disabled(viewModel.isNextButtonDisabled)
+        }
+        .navigationTitle("Account details")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

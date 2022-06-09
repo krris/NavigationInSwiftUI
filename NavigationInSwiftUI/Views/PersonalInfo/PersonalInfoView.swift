@@ -20,7 +20,6 @@ struct PersonalInfoView: View {
                         .keyboardType(.phonePad)
                 }
             }
-            .background(Color.white)
 
             Spacer()
 
@@ -30,12 +29,13 @@ struct PersonalInfoView: View {
                 Text("Next")
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .border(Color.black, width: 1)
+                    .border(Color(UIColor.label), width: 1)
                     .padding()
             }
             .disabled(viewModel.isNextButtonDisabled)
         }
-        .background(Color.white)
+        .navigationTitle("Personal Information")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

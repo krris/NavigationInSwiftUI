@@ -18,7 +18,6 @@ struct ConfirmPinView: View {
                         .keyboardType(.numberPad)
                 }
             }
-            .background(Color.white)
 
             Spacer()
 
@@ -28,12 +27,13 @@ struct ConfirmPinView: View {
                 Text("Confirm")
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .border(Color.black, width: 1)
+                    .border(Color(UIColor.label), width: 1)
                     .padding()
             }
             .disabled(viewModel.isNextButtonDisabled)
         }
-        .background(Color.white)
+        .navigationTitle("Confirm PIN")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
