@@ -36,17 +36,12 @@ struct AppCoordinator: View {
         case onboarding
     }
 
-    // TODO Inject
     @ObservedObject var appRoutesProvider = AppRoutesProvider()
 
-    private let onboardingRoutesProvider: OnboardingRoutesProvider
-    private let signedInRoutesProvider: SignedInRoutesProvider
+    private let onboardingRoutesProvider = OnboardingRoutesProvider()
+    private let signedInRoutesProvider = SignedInRoutesProvider()
 
     init() {
-        // TODO inject
-        onboardingRoutesProvider = OnboardingRoutesProvider()
-        signedInRoutesProvider = SignedInRoutesProvider()
-
         onboardingRoutesProvider.didComplete = { [appRoutesProvider] in
             appRoutesProvider.startSignedInCoordinator()
         }

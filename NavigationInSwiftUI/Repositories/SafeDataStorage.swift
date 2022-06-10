@@ -7,7 +7,13 @@
 
 import Foundation
 
-final class SafeDataStorage {
+protocol SafeDataStoring {
+    func save<CodableObject: Encodable>(data: CodableObject, for key: String)
+    func removeObject(for key: String)
+    func getData<CodableObject: Decodable>(for key: String) -> CodableObject?
+}
+
+final class SafeDataStorage: SafeDataStoring {
 
     private let userDefaults: UserDefaultsProtocol
 

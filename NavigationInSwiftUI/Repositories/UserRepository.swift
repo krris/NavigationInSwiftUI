@@ -21,21 +21,23 @@ final class UserRepository: UserRepositoryProtocol {
         static let userKey: String = "com.kwcodes.user.key"
     }
 
-    private init() {}
-
     static let shared: UserRepositoryProtocol = UserRepository()
 
     var user: User? {
         dataStorage.getData(for: Constants.userKey)
     }
+    
     var userDraft: User?
 
     var isSignedIn: Bool {
         user != nil
     }
 
-    // TODO: inject
-    private let dataStorage = SafeDataStorage()
+    private let dataStorage: SafeDataStoring
+
+    private init(dataStorage: SafeDataStoring = SafeDataStorage()) {
+        self.dataStorage = dataStorage
+    }
 
     func signInAndStoreUserData() {
         guard let userDraft = userDraft else { return }
