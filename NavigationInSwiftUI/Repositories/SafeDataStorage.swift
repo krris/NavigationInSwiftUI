@@ -9,8 +9,11 @@ import Foundation
 
 final class SafeDataStorage {
 
-    // TODO: inject
-    private let userDefaults = UserDefaults.standard
+    private let userDefaults: UserDefaultsProtocol
+
+    init(userDefaults: UserDefaultsProtocol = UserDefaults.standard) {
+        self.userDefaults = userDefaults
+    }
 
     func save<CodableObject: Encodable>(data: CodableObject, for key: String) {
         let encoder = JSONEncoder()

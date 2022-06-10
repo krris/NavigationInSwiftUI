@@ -16,6 +16,7 @@
 		F579AF7C285123C700773E6A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F579AF7B285123C700773E6A /* User.swift */; };
 		F579AF7F2851339A00773E6A /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F579AF7E2851339A00773E6A /* UserRepository.swift */; };
 		F579AF812851340000773E6A /* SafeDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F579AF802851340000773E6A /* SafeDataStorage.swift */; };
+		F579F46A28538C1100F3C00F /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F579F46928538C1100F3C00F /* UserDefaultsProtocol.swift */; };
 		F587E5DB284F8309005D1A99 /* FlowStacks in Frameworks */ = {isa = PBXBuildFile; productRef = F587E5DA284F8309005D1A99 /* FlowStacks */; };
 		F587E5DD284FDB98005D1A99 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587E5DC284FDB98005D1A99 /* AppCoordinator.swift */; };
 		F587E5DF284FDC8F005D1A99 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587E5DE284FDC8F005D1A99 /* OnboardingCoordinator.swift */; };
@@ -66,6 +67,7 @@
 		F579AF7B285123C700773E6A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F579AF7E2851339A00773E6A /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		F579AF802851340000773E6A /* SafeDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeDataStorage.swift; sourceTree = "<group>"; };
+		F579F46928538C1100F3C00F /* UserDefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProtocol.swift; sourceTree = "<group>"; };
 		F587E5DC284FDB98005D1A99 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		F587E5DE284FDC8F005D1A99 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		F587E5E0284FDCB1005D1A99 /* SignedInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInCoordinator.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		F54BC819284D0F16006711CD /* NavigationInSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				F579F46828538BF400F3C00F /* Utils */,
 				F579AF7D2851337F00773E6A /* Repositories */,
 				F579AF7A285123A100773E6A /* Models */,
 				F587E602284FE1AA005D1A99 /* Coordinators */,
@@ -185,6 +188,14 @@
 				F579AF802851340000773E6A /* SafeDataStorage.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		F579F46828538BF400F3C00F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F579F46928538C1100F3C00F /* UserDefaultsProtocol.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		F587E5E3284FE051005D1A99 /* Screens */ = {
@@ -422,6 +433,7 @@
 				F587E5DF284FDC8F005D1A99 /* OnboardingCoordinator.swift in Sources */,
 				F587E5F8284FE13B005D1A99 /* NewPinView.swift in Sources */,
 				F587E5ED284FE0C4005D1A99 /* CredentialsViewModel.swift in Sources */,
+				F579F46A28538C1100F3C00F /* UserDefaultsProtocol.swift in Sources */,
 				F587E605284FE925005D1A99 /* MainView.swift in Sources */,
 				F587E5E9284FE0B1005D1A99 /* TermsOfServiceViewModel.swift in Sources */,
 				F54BC81B284D0F16006711CD /* NavigationInSwiftUIApp.swift in Sources */,

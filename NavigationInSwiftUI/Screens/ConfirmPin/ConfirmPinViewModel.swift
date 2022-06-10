@@ -35,11 +35,7 @@ final class ConfirmPinViewModel: ConfirmPinViewModelProtocol {
 
     func didTapNextButton() {
         guard isPinValid else { return }
-
-        // TODO: move to userRepository
-        guard let userDraft = userRepository.userDraft else { return }
-        userRepository.save(userDraft)
-
+        userRepository.signInAndStoreUserData()
         routeAction?(.didTapNextButton)
     }
 }

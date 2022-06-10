@@ -11,7 +11,8 @@ protocol UserRepositoryProtocol {
     var user: User? { get }
     var userDraft: User? { get set }
     var isSignedIn: Bool { get}
-    func save(_ user: User)
+
+    func signInAndStoreUserData()
     func signOut()
 }
 
@@ -36,9 +37,11 @@ final class UserRepository: UserRepositoryProtocol {
     // TODO: inject
     private let dataStorage = SafeDataStorage()
 
-    func save(_ user: User) {
+    func signInAndStoreUserData() {
+        guard let userDraft = userDraft else { return }
+
         dataStorage.save(
-            data: user,
+            data: userDraft,
             for: Constants.userKey
         )
     }
