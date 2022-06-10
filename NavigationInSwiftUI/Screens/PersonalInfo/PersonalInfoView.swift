@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct PersonalInfoView: View {
-    @ObservedObject var viewModel: PersonalInfoViewModel
+struct PersonalInfoView<ViewModel: PersonalInfoViewModelProtocol>: View {
+    @ObservedObject var viewModel: ViewModel
 
     var body: some View {
         VStack {

@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct NewPinView: View {
-    @StateObject var viewModel: NewPinViewModel
+struct NewPinView<ViewModel: NewPinViewModelProtocol>: View {
+    @StateObject var viewModel: ViewModel
 
     var body: some View {
         VStack {

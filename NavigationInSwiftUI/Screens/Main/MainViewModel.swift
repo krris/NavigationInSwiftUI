@@ -9,6 +9,7 @@ import Foundation
 
 protocol MainViewModelProtocol {
     var userName: String { get }
+    func didTapSignOutButton()
 }
 
 final class MainViewModel: MainViewModelProtocol {

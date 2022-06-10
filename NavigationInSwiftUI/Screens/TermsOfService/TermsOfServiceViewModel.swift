@@ -8,7 +8,12 @@
 import Foundation
 import SwiftUI
 
-final class TermsOfServiceViewModel: ObservableObject {
+protocol TermsOfServiceViewModelProtocol: ObservableObject {
+    var areTermsAccepted: Bool { get set }
+    func didTapNextButton()
+}
+
+final class TermsOfServiceViewModel: TermsOfServiceViewModelProtocol {
     enum RouteAction {
         case didTapNextButton
     }

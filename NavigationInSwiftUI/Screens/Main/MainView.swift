@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    let viewModel: MainViewModel
+    let viewModel: MainViewModelProtocol
 
     var body: some View {
 

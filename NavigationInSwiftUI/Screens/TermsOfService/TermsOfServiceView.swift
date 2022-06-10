@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct TermsOfServiceView: View {
-    @StateObject var viewModel: TermsOfServiceViewModel
+struct TermsOfServiceView<ViewModel: TermsOfServiceViewModelProtocol>: View {
+    @StateObject var viewModel: ViewModel
     
     var body: some View {
         VStack {

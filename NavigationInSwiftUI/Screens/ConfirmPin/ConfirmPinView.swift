@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ConfirmPinView: View {
-    @ObservedObject var viewModel: ConfirmPinViewModel
+struct ConfirmPinView<ViewModel: ConfirmPinViewModel>: View {
+    @ObservedObject var viewModel: ViewModel
 
     var body: some View {
         VStack {
