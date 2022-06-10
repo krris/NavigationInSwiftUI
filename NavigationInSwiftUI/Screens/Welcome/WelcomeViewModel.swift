@@ -7,7 +7,11 @@
 
 import Foundation
 
-final class WelcomeViewModel: ObservableObject {
+protocol WelcomeViewModelProtocol {
+    func didTapNextButton()
+}
+
+final class WelcomeViewModel: WelcomeViewModelProtocol {
     enum RouteAction {
         case didTapNextButton
     }

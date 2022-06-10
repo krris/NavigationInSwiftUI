@@ -7,7 +7,15 @@
 
 import Combine
 
-final class CredentialsViewModel: ObservableObject {
+protocol CredentialsViewModelProtocol: ObservableObject {
+    var password: String { get set }
+    var email: String { get set }
+
+    var isNextButtonDisabled: Bool { get }
+    func didTapNextButton()
+}
+
+final class CredentialsViewModel: CredentialsViewModelProtocol {
     enum RouteAction {
         case didTapNextButton
     }
@@ -17,11 +25,11 @@ final class CredentialsViewModel: ObservableObject {
     @Published var password: String = ""
     @Published var email: String = ""
 
-    private var userRepository: UserRepositoryProtocol
-
     var isNextButtonDisabled: Bool {
         isFormValid == false
     }
+
+    private var userRepository: UserRepositoryProtocol
 
     init(userRepository: UserRepositoryProtocol = UserRepository.shared) {
         self.userRepository = userRepository
@@ -35,8 +43,12 @@ final class CredentialsViewModel: ObservableObject {
 
         routeAction?(.didTapNextButton)
     }
+}
 
-    private var isFormValid: Bool {
+// MARK: Private
+
+private extension CredentialsViewModel {
+    var isFormValid: Bool {
         !email.isEmpty && !password.isEmpty
     }
 }

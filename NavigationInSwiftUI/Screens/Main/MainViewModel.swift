@@ -7,14 +7,16 @@
 
 import Foundation
 
-final class MainViewModel: ObservableObject {
+protocol MainViewModelProtocol {
+    var userName: String { get }
+}
+
+final class MainViewModel: MainViewModelProtocol {
     enum RouteAction {
         case didTapSignOutButton
     }
 
     var routeAction: ((RouteAction) -> Void)?
-
-    private var userRepository: UserRepositoryProtocol
 
     var userName: String {
         guard let user = userRepository.user else {
@@ -23,6 +25,8 @@ final class MainViewModel: ObservableObject {
         }
         return "\(user.firstName) \(user.lastName)"
     }
+
+    private var userRepository: UserRepositoryProtocol
 
     init(userRepository: UserRepositoryProtocol = UserRepository.shared) {
         self.userRepository = userRepository

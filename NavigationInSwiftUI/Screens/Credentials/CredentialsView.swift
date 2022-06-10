@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct CredentialsView: View {
-    @StateObject var viewModel: CredentialsViewModel
+struct CredentialsView<ViewModel: CredentialsViewModelProtocol>: View {
+    @StateObject var viewModel: ViewModel
 
     var body: some View {
         VStack {

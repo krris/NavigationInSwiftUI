@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WelcomeView: View {
-    @ObservedObject var viewModel: WelcomeViewModel
+    let viewModel: WelcomeViewModel
 
     var body: some View {
         VStack {
