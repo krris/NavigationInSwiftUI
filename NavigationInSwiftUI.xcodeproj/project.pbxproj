@@ -17,6 +17,9 @@
 		F579AF7F2851339A00773E6A /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F579AF7E2851339A00773E6A /* UserRepository.swift */; };
 		F579AF812851340000773E6A /* SafeDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F579AF802851340000773E6A /* SafeDataStorage.swift */; };
 		F579F46A28538C1100F3C00F /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F579F46928538C1100F3C00F /* UserDefaultsProtocol.swift */; };
+		F579F46C28538DB800F3C00F /* AppRoutesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F579F46B28538DB800F3C00F /* AppRoutesProvider.swift */; };
+		F579F47128538E2B00F3C00F /* OnboardingRoutesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F579F47028538E2B00F3C00F /* OnboardingRoutesProvider.swift */; };
+		F579F47328538E4700F3C00F /* SignedInRoutesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F579F47228538E4700F3C00F /* SignedInRoutesProvider.swift */; };
 		F587E5DB284F8309005D1A99 /* FlowStacks in Frameworks */ = {isa = PBXBuildFile; productRef = F587E5DA284F8309005D1A99 /* FlowStacks */; };
 		F587E5DD284FDB98005D1A99 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587E5DC284FDB98005D1A99 /* AppCoordinator.swift */; };
 		F587E5DF284FDC8F005D1A99 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587E5DE284FDC8F005D1A99 /* OnboardingCoordinator.swift */; };
@@ -68,6 +71,9 @@
 		F579AF7E2851339A00773E6A /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		F579AF802851340000773E6A /* SafeDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeDataStorage.swift; sourceTree = "<group>"; };
 		F579F46928538C1100F3C00F /* UserDefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProtocol.swift; sourceTree = "<group>"; };
+		F579F46B28538DB800F3C00F /* AppRoutesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoutesProvider.swift; sourceTree = "<group>"; };
+		F579F47028538E2B00F3C00F /* OnboardingRoutesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRoutesProvider.swift; sourceTree = "<group>"; };
+		F579F47228538E4700F3C00F /* SignedInRoutesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInRoutesProvider.swift; sourceTree = "<group>"; };
 		F587E5DC284FDB98005D1A99 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		F587E5DE284FDC8F005D1A99 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		F587E5E0284FDCB1005D1A99 /* SignedInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInCoordinator.swift; sourceTree = "<group>"; };
@@ -198,6 +204,33 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		F579F46D28538DD900F3C00F /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				F579F47028538E2B00F3C00F /* OnboardingRoutesProvider.swift */,
+				F587E5DE284FDC8F005D1A99 /* OnboardingCoordinator.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		F579F46E28538E0200F3C00F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F579F46B28538DB800F3C00F /* AppRoutesProvider.swift */,
+				F587E5DC284FDB98005D1A99 /* AppCoordinator.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F579F46F28538E1100F3C00F /* SignedIn */ = {
+			isa = PBXGroup;
+			children = (
+				F579F47228538E4700F3C00F /* SignedInRoutesProvider.swift */,
+				F587E5E0284FDCB1005D1A99 /* SignedInCoordinator.swift */,
+			);
+			path = SignedIn;
+			sourceTree = "<group>";
+		};
 		F587E5E3284FE051005D1A99 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,9 +302,9 @@
 		F587E602284FE1AA005D1A99 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				F587E5DC284FDB98005D1A99 /* AppCoordinator.swift */,
-				F587E5DE284FDC8F005D1A99 /* OnboardingCoordinator.swift */,
-				F587E5E0284FDCB1005D1A99 /* SignedInCoordinator.swift */,
+				F579F46E28538E0200F3C00F /* App */,
+				F579F46D28538DD900F3C00F /* Onboarding */,
+				F579F46F28538E1100F3C00F /* SignedIn */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -424,18 +457,21 @@
 				F587E5F4284FE115005D1A99 /* PersonalInfoView.swift in Sources */,
 				F587E601284FE1A0005D1A99 /* ConfirmPinViewModel.swift in Sources */,
 				F587E5E1284FDCB1005D1A99 /* SignedInCoordinator.swift in Sources */,
+				F579F47328538E4700F3C00F /* SignedInRoutesProvider.swift in Sources */,
 				F579AF812851340000773E6A /* SafeDataStorage.swift in Sources */,
 				F587E5E5284FE06C005D1A99 /* WelcomeView.swift in Sources */,
 				F587E5DD284FDB98005D1A99 /* AppCoordinator.swift in Sources */,
 				F587E5E7284FE095005D1A99 /* WelcomeViewModel.swift in Sources */,
 				F587E5F6284FE120005D1A99 /* PersonalInfoViewModel.swift in Sources */,
 				F587E5FB284FE14C005D1A99 /* NewPinViewModel.swift in Sources */,
+				F579F47128538E2B00F3C00F /* OnboardingRoutesProvider.swift in Sources */,
 				F587E5DF284FDC8F005D1A99 /* OnboardingCoordinator.swift in Sources */,
 				F587E5F8284FE13B005D1A99 /* NewPinView.swift in Sources */,
 				F587E5ED284FE0C4005D1A99 /* CredentialsViewModel.swift in Sources */,
 				F579F46A28538C1100F3C00F /* UserDefaultsProtocol.swift in Sources */,
 				F587E605284FE925005D1A99 /* MainView.swift in Sources */,
 				F587E5E9284FE0B1005D1A99 /* TermsOfServiceViewModel.swift in Sources */,
+				F579F46C28538DB800F3C00F /* AppRoutesProvider.swift in Sources */,
 				F54BC81B284D0F16006711CD /* NavigationInSwiftUIApp.swift in Sources */,
 				F587E5EB284FE0B8005D1A99 /* TermsOfServiceView.swift in Sources */,
 				F587E5EF284FE0CF005D1A99 /* CredentialsView.swift in Sources */,
