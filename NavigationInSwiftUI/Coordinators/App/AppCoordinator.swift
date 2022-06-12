@@ -16,8 +16,8 @@ struct AppCoordinator: View {
 
     @ObservedObject var appRoutesProvider = AppRoutesProvider()
 
-    private let onboardingRoutesProvider = OnboardingRoutesProvider()
-    private let signedInRoutesProvider = SignedInRoutesProvider()
+    let onboardingRoutesProvider = OnboardingRoutesProvider()
+    let signedInRoutesProvider = SignedInRoutesProvider()
 
     init() {
         onboardingRoutesProvider.didComplete = { [appRoutesProvider] in
