@@ -15,6 +15,7 @@ protocol SafeDataStoring {
 
 final class SafeDataStorage: SafeDataStoring {
 
+    // UserDefaults are used here to keep this assignment easy. In a production app it's not the best idea to keep passwords in UserDefaults :)
     private let userDefaults: UserDefaultsProtocol
 
     init(userDefaults: UserDefaultsProtocol = UserDefaults.standard) {
