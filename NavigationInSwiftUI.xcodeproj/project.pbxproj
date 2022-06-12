@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F512C27328567DE500EE00D5 /* UserRepositoryProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F512C27228567DE500EE00D5 /* UserRepositoryProtocolStub.swift */; };
 		F54BC81B284D0F16006711CD /* NavigationInSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54BC81A284D0F16006711CD /* NavigationInSwiftUIApp.swift */; };
 		F54BC81F284D0F16006711CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F54BC81E284D0F16006711CD /* Assets.xcassets */; };
 		F54BC822284D0F16006711CD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F54BC821284D0F16006711CD /* Preview Assets.xcassets */; };
-		F54BC82C284D0F16006711CD /* NavigationInSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54BC82B284D0F16006711CD /* NavigationInSwiftUITests.swift */; };
+		F54BC82C284D0F16006711CD /* OnboardingRoutesProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54BC82B284D0F16006711CD /* OnboardingRoutesProviderTests.swift */; };
 		F54BC836284D0F16006711CD /* NavigationInSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54BC835284D0F16006711CD /* NavigationInSwiftUIUITests.swift */; };
 		F54BC838284D0F16006711CD /* NavigationInSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54BC837284D0F16006711CD /* NavigationInSwiftUIUITestsLaunchTests.swift */; };
 		F579AF7C285123C700773E6A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F579AF7B285123C700773E6A /* User.swift */; };
@@ -39,6 +40,7 @@
 		F587E601284FE1A0005D1A99 /* ConfirmPinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587E600284FE1A0005D1A99 /* ConfirmPinViewModel.swift */; };
 		F587E605284FE925005D1A99 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587E604284FE925005D1A99 /* MainView.swift */; };
 		F587E607284FE935005D1A99 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587E606284FE935005D1A99 /* MainViewModel.swift */; };
+		F5BD0F48285670360044AD96 /* OnboardingCoordinatorScreen+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD0F47285670360044AD96 /* OnboardingCoordinatorScreen+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,12 +61,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F512C27228567DE500EE00D5 /* UserRepositoryProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryProtocolStub.swift; sourceTree = "<group>"; };
 		F54BC817284D0F16006711CD /* NavigationInSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationInSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F54BC81A284D0F16006711CD /* NavigationInSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationInSwiftUIApp.swift; sourceTree = "<group>"; };
 		F54BC81E284D0F16006711CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F54BC821284D0F16006711CD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F54BC827284D0F16006711CD /* NavigationInSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavigationInSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F54BC82B284D0F16006711CD /* NavigationInSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationInSwiftUITests.swift; sourceTree = "<group>"; };
+		F54BC82B284D0F16006711CD /* OnboardingRoutesProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRoutesProviderTests.swift; sourceTree = "<group>"; };
 		F54BC831284D0F16006711CD /* NavigationInSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavigationInSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F54BC835284D0F16006711CD /* NavigationInSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationInSwiftUIUITests.swift; sourceTree = "<group>"; };
 		F54BC837284D0F16006711CD /* NavigationInSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationInSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -93,6 +96,7 @@
 		F587E600284FE1A0005D1A99 /* ConfirmPinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPinViewModel.swift; sourceTree = "<group>"; };
 		F587E604284FE925005D1A99 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F587E606284FE935005D1A99 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		F5BD0F47285670360044AD96 /* OnboardingCoordinatorScreen+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingCoordinatorScreen+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +171,9 @@
 		F54BC82A284D0F16006711CD /* NavigationInSwiftUITests */ = {
 			isa = PBXGroup;
 			children = (
-				F54BC82B284D0F16006711CD /* NavigationInSwiftUITests.swift */,
+				F54BC82B284D0F16006711CD /* OnboardingRoutesProviderTests.swift */,
+				F5BD0F47285670360044AD96 /* OnboardingCoordinatorScreen+Extensions.swift */,
+				F512C27228567DE500EE00D5 /* UserRepositoryProtocolStub.swift */,
 			);
 			path = NavigationInSwiftUITests;
 			sourceTree = "<group>";
@@ -490,7 +496,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F54BC82C284D0F16006711CD /* NavigationInSwiftUITests.swift in Sources */,
+				F54BC82C284D0F16006711CD /* OnboardingRoutesProviderTests.swift in Sources */,
+				F512C27328567DE500EE00D5 /* UserRepositoryProtocolStub.swift in Sources */,
+				F5BD0F48285670360044AD96 /* OnboardingCoordinatorScreen+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,11 @@ struct OnboardingCoordinator: View {
     @ObservedObject var routesProvider: OnboardingRoutesProvider
 
     enum Screen {
+        // Ideally we would like to pass here ViewModelProtocols. Unfortunately this cannot be done by gernerics limitation in Swift 5.6. Example error:
+        //
+        // `Protocol 'TermsOfServiceViewModelProtocol' can only be used as a generic constraint because it has Self or associated type requirements`
+        //
+        // The good news is that we might be able to make it work with Swift 5.7: https://developer.apple.com/videos/play/wwdc2022/110352/
         case welcome(WelcomeViewModel)
         case termsOfService(TermsOfServiceViewModel)
         case credentials(CredentialsViewModel)
