@@ -18,6 +18,9 @@ struct MainView: View {
                 .font(.largeTitle)
             Spacer()
 
+            Text("📱 \(viewModel.phoneNumber)")
+            Text("✉️ \(viewModel.email)")
+
             Button(action: {
                 viewModel.didTapSignOutButton()
             }) {

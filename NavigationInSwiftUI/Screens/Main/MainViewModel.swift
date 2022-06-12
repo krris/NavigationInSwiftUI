@@ -9,6 +9,8 @@ import Foundation
 
 protocol MainViewModelProtocol {
     var userName: String { get }
+    var phoneNumber: String { get }
+    var email: String { get }
     func didTapSignOutButton()
 }
 
@@ -20,11 +22,26 @@ final class MainViewModel: MainViewModelProtocol {
     var routeAction: ((RouteAction) -> Void)?
 
     var userName: String {
+        guard let user = user else { return "" }
+        return "\(user.firstName) \(user.lastName)"
+    }
+
+    var phoneNumber: String {
+        guard let user = user else { return "" }
+        return "\(user.phoneNumber)"
+    }
+
+    var email: String {
+        guard let user = user else { return "" }
+        return "\(user.email)"
+    }
+
+    private var user: User? {
         guard let user = userRepository.user else {
             assertionFailure("Signed in user is expected on this screen")
-            return ""
+            return nil
         }
-        return "\(user.firstName) \(user.lastName)"
+        return user
     }
 
     private var userRepository: UserRepositoryProtocol
