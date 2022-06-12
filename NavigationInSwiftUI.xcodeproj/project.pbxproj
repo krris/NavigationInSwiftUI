@@ -142,11 +142,11 @@
 		F54BC819284D0F16006711CD /* NavigationInSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				F579F46828538BF400F3C00F /* Utils */,
-				F579AF7D2851337F00773E6A /* Repositories */,
-				F579AF7A285123A100773E6A /* Models */,
 				F587E602284FE1AA005D1A99 /* Coordinators */,
+				F579AF7A285123A100773E6A /* Models */,
+				F579AF7D2851337F00773E6A /* Repositories */,
 				F587E5E3284FE051005D1A99 /* Screens */,
+				F579F46828538BF400F3C00F /* Utils */,
 				F54BC81A284D0F16006711CD /* NavigationInSwiftUIApp.swift */,
 				F54BC81E284D0F16006711CD /* Assets.xcassets */,
 				F54BC820284D0F16006711CD /* Preview Content */,
