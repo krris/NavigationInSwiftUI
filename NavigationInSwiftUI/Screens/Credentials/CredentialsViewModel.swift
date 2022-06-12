@@ -30,9 +30,14 @@ final class CredentialsViewModel: CredentialsViewModelProtocol {
     }
 
     private var userRepository: UserRepositoryProtocol
+    private let emailValidator: EmailValidating
 
-    init(userRepository: UserRepositoryProtocol = UserRepository.shared) {
+    init(
+        userRepository: UserRepositoryProtocol = UserRepository.shared,
+        emailValidator: EmailValidating = EmailValidator()
+    ) {
         self.userRepository = userRepository
+        self.emailValidator = emailValidator
     }
 
     func didTapNextButton() {
@@ -49,6 +54,7 @@ final class CredentialsViewModel: CredentialsViewModelProtocol {
 
 private extension CredentialsViewModel {
     var isFormValid: Bool {
-        !email.isEmpty && !password.isEmpty
+        emailValidator.isValid(email) &&
+        !password.isEmpty
     }
 }
