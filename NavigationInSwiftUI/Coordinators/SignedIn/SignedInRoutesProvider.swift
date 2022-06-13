@@ -16,7 +16,11 @@ final class SignedInRoutesProvider: ObservableObject {
     init() {
         displayMainScreen()
     }
+}
 
+// MARK: - Private
+
+private extension SignedInRoutesProvider {
     func displayMainScreen() {
         let viewModel = MainViewModel()
         viewModel.routeAction = { [weak self] action in

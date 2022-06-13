@@ -38,8 +38,13 @@ final class OnboardingRoutesProvider: ObservableObject {
         setUpRouteActions()
         makeRootScreen()
     }
+}
 
-    private func setUpRouteActions() {
+// MARK: - Private
+
+private extension OnboardingRoutesProvider {
+
+    func setUpRouteActions() {
         welcomeViewModel.routeAction = { [weak self] action in
             switch action {
             case .didTapNextButton:
@@ -78,37 +83,37 @@ final class OnboardingRoutesProvider: ObservableObject {
         }
     }
 
-    private func makeRootScreen() {
+    func makeRootScreen() {
         let screen = OnboardingCoordinator.Screen.welcome(welcomeViewModel)
         routes.presentSheet(screen, embedInNavigationView: true)
     }
 
-    private func displayTermsOfServiceScreen() {
+    func displayTermsOfServiceScreen() {
         let screen = OnboardingCoordinator.Screen.termsOfService(termsOfServiceViewModel)
         routes.push(screen)
     }
 
-    private func displayCredentialsScreen() {
+    func displayCredentialsScreen() {
         let screen = OnboardingCoordinator.Screen.credentials(credentialsViewModel)
         routes.push(screen)
     }
 
-    private func displayPersonalInfoScreen() {
+    func displayPersonalInfoScreen() {
         let screen = OnboardingCoordinator.Screen.personalInfo(personalInfoViewModel)
         routes.push(screen)
     }
 
-    private func displayNewPinScreen() {
+    func displayNewPinScreen() {
         let screen = OnboardingCoordinator.Screen.newPin(newPinViewModel)
         routes.push(screen)
     }
 
-    private func displayConfirmPinScreen() {
+    func displayConfirmPinScreen() {
         let screen = OnboardingCoordinator.Screen.confirmPin(confirmPinViewModel)
         routes.push(screen)
     }
 
-    private func completeFlow() {
+    func completeFlow() {
         didComplete?()
         Task { @MainActor in
             RouteSteps.withDelaysIfUnsupported(self, \.routes) {
