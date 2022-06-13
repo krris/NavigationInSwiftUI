@@ -112,7 +112,7 @@ final class OnboardingRoutesProvider: ObservableObject {
         didComplete?()
         Task { @MainActor in
             RouteSteps.withDelaysIfUnsupported(self, \.routes) {
-              $0.goBackToRoot()
+                $0.goBackToRoot()
             }
         }
     }
