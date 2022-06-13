@@ -11,9 +11,7 @@ import FlowStacks
 final class AppRoutesProvider: ObservableObject {
     @Published var routes: Routes<AppCoordinator.Screen> = []
 
-    private var userRepository: UserRepositoryProtocol = UserRepository.shared
-
-    init() {
+    init(userRepository: UserRepositoryProtocol = UserRepository.shared) {
         if userRepository.isSignedIn {
             startSignedInCoordinator()
         } else {
