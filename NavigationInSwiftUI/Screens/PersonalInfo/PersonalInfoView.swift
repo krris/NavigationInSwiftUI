@@ -23,16 +23,17 @@ struct PersonalInfoView<ViewModel: PersonalInfoViewModelProtocol>: View {
 
             Spacer()
 
-            Button(action: {
-                viewModel.didTapNextButton()
-            }) {
-                Text("Next")
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .border(Color(UIColor.label), width: 1)
-                    .padding()
-            }
-            .disabled(viewModel.isNextButtonDisabled)
+            Button(
+                action: {
+                    viewModel.didTapNextButton()
+                }, label: {
+                    Text("Next")
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .border(Color(UIColor.label), width: 1)
+                        .padding()
+                })
+                .disabled(viewModel.isNextButtonDisabled)
         }
         .navigationTitle("Personal Information")
         .navigationBarTitleDisplayMode(.inline)

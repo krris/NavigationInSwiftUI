@@ -21,16 +21,17 @@ struct ConfirmPinView<ViewModel: ConfirmPinViewModel>: View {
 
             Spacer()
 
-            Button(action: {
-                viewModel.didTapNextButton()
-            }) {
-                Text("Confirm")
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .border(Color(UIColor.label), width: 1)
-                    .padding()
-            }
-            .disabled(viewModel.isNextButtonDisabled)
+            Button(
+                action: {
+                    viewModel.didTapNextButton()
+                }, label: {
+                    Text("Confirm")
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .border(Color(UIColor.label), width: 1)
+                        .padding()
+                })
+                .disabled(viewModel.isNextButtonDisabled)
         }
         .navigationTitle("Confirm PIN")
         .navigationBarTitleDisplayMode(.inline)

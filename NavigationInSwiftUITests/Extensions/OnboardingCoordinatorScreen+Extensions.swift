@@ -10,7 +10,7 @@
 extension OnboardingCoordinator.Screen {
     var isWelcome: Bool {
         switch self {
-        case .welcome(_):
+        case .welcome:
             return true
         default:
             return false
@@ -19,7 +19,7 @@ extension OnboardingCoordinator.Screen {
 
     var isTermsOfService: Bool {
         switch self {
-        case .termsOfService(_):
+        case .termsOfService:
             return true
         default:
             return false
@@ -28,7 +28,7 @@ extension OnboardingCoordinator.Screen {
 
     var isConfirmPin: Bool {
         switch self {
-        case .confirmPin(_):
+        case .confirmPin:
             return true
         default:
             return false
@@ -37,7 +37,7 @@ extension OnboardingCoordinator.Screen {
 
     var isCredentials: Bool {
         switch self {
-        case .credentials(_):
+        case .credentials:
             return true
         default:
             return false
@@ -46,7 +46,7 @@ extension OnboardingCoordinator.Screen {
 
     var isNewPin: Bool {
         switch self {
-        case .newPin(_):
+        case .newPin:
             return true
         default:
             return false
@@ -55,7 +55,7 @@ extension OnboardingCoordinator.Screen {
 
     var isPersonalInfo: Bool {
         switch self {
-        case .personalInfo(_):
+        case .personalInfo:
             return true
         default:
             return false

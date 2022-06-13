@@ -17,15 +17,17 @@ struct WelcomeView: View {
                 .font(.largeTitle)
             Spacer()
 
-            Button(action: {
-                viewModel.didTapNextButton()
-            }) {
-                Text("Continue")
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .border(Color(UIColor.label), width: 1)
-                    .padding()
-            }
+            Button(
+                action: {
+                    viewModel.didTapNextButton()
+                },
+                label: {
+                    Text("Continue")
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .border(Color(UIColor.label), width: 1)
+                        .padding()
+                })
         }
     }
 }

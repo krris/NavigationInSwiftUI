@@ -15,7 +15,6 @@ final class CredentialsViewModelTests: XCTestCase {
     var emailValidatingMock: EmailValidatingMock!
     var routeActionCalls: [CredentialsViewModel.RouteAction] = []
 
-
     override func setUpWithError() throws {
         userRepositoryMock = UserRepositoryProtocolMock()
         emailValidatingMock = EmailValidatingMock()

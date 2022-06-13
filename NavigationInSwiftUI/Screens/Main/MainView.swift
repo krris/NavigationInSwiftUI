@@ -21,15 +21,16 @@ struct MainView: View {
             Text("📱 \(viewModel.phoneNumber)")
             Text("✉️ \(viewModel.email)")
 
-            Button(action: {
-                viewModel.didTapSignOutButton()
-            }) {
-                Text("Sign out")
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .border(Color(UIColor.label), width: 1)
-                    .padding()
-            }
+            Button(
+                action: {
+                    viewModel.didTapSignOutButton()
+                }, label: {
+                    Text("Sign out")
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .border(Color(UIColor.label), width: 1)
+                        .padding()
+                })
         }
     }
 }

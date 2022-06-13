@@ -11,7 +11,7 @@ import FlowStacks
 final class SignedInRoutesProvider: ObservableObject {
     @Published var routes: Routes<SignedInCoordinator.Screen> = []
 
-    var didComplete: (() -> ())?
+    var didComplete: (() -> Void)?
 
     init() {
         displayMainScreen()

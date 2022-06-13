@@ -11,7 +11,7 @@ import FlowStacks
 final class OnboardingRoutesProvider: ObservableObject {
     @Published var routes: Routes<OnboardingCoordinator.Screen> = []
 
-    var didComplete: (() -> ())?
+    var didComplete: (() -> Void)?
 
     private let welcomeViewModel: WelcomeViewModel
     private let termsOfServiceViewModel: TermsOfServiceViewModel

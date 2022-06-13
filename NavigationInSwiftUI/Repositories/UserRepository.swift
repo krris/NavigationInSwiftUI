@@ -26,7 +26,7 @@ final class UserRepository: UserRepositoryProtocol {
     var user: User? {
         dataStorage.getData(for: Constants.userKey)
     }
-    
+
     var userDraft: User?
 
     var isSignedIn: Bool {

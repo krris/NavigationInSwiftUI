@@ -9,7 +9,7 @@ import Foundation
 @testable import NavigationInSwiftUI
 
 final class EmailValidatingMock: EmailValidating {
-    
+
     var isValidEmail: Bool = false
     func isValid(_ text: String) -> Bool {
         isValidEmail

@@ -10,7 +10,7 @@ import Combine
 protocol PersonalInfoViewModelProtocol: ObservableObject {
     var firstName: String { get set }
     var lastName: String { get set }
-    var phoneNumber: String  { get set }
+    var phoneNumber: String { get set }
 
     var isNextButtonDisabled: Bool { get }
     func didTapNextButton()
