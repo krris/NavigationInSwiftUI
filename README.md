@@ -1,6 +1,6 @@
 # NavigationInSwiftUI
 
-A project that shows how navigation can be implemented in SwiftUI.
+A project that shows how navigation can be implemented in SwiftUI using FlowStack and MVVM + Coordinators pattern.
 
 The app is developed with:
 * Swift 5.6
