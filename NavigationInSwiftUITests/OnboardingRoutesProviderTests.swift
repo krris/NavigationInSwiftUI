@@ -25,10 +25,10 @@ final class OnboardingRoutesProviderTests: XCTestCase {
 
         welcomeViewModel = WelcomeViewModel()
         termsOfServiceViewModel = TermsOfServiceViewModel()
-        credentialsViewModel = CredentialsViewModel(userRepository: UserRepositoryProtocolStub())
-        personalInfoViewModel = PersonalInfoViewModel(userRepository: UserRepositoryProtocolStub())
-        newPinViewModel = NewPinViewModel(userRepository: UserRepositoryProtocolStub())
-        confirmPinViewModel = ConfirmPinViewModel(userRepository: UserRepositoryProtocolStub())
+        credentialsViewModel = CredentialsViewModel(userRepository: UserRepositoryProtocolMock())
+        personalInfoViewModel = PersonalInfoViewModel(userRepository: UserRepositoryProtocolMock())
+        newPinViewModel = NewPinViewModel(userRepository: UserRepositoryProtocolMock())
+        confirmPinViewModel = ConfirmPinViewModel(userRepository: UserRepositoryProtocolMock())
 
         sut = OnboardingRoutesProvider(
             welcomeViewModel: welcomeViewModel,
