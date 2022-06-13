@@ -8,7 +8,6 @@
 import SwiftUI
 import FlowStacks
 
-
 struct SignedInCoordinator: View {
     @ObservedObject var routesProvider: SignedInRoutesProvider
 

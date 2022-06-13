@@ -175,11 +175,9 @@
 		F54BC82A284D0F16006711CD /* NavigationInSwiftUITests */ = {
 			isa = PBXGroup;
 			children = (
-				F54BC82B284D0F16006711CD /* OnboardingRoutesProviderTests.swift */,
-				F5BD0F47285670360044AD96 /* OnboardingCoordinatorScreen+Extensions.swift */,
-				F512C27228567DE500EE00D5 /* UserRepositoryProtocolMock.swift */,
-				F54DCA4B285777DB004C49CE /* CredentialsViewModelTests.swift */,
-				F54DCA4D28577875004C49CE /* EmailValidatingMock.swift */,
+				F54DCA4F285786AE004C49CE /* Extensions */,
+				F54DCA50285786B7004C49CE /* Mocks */,
+				F54DCA51285786C1004C49CE /* Tests */,
 			);
 			path = NavigationInSwiftUITests;
 			sourceTree = "<group>";
@@ -191,6 +189,32 @@
 				F54BC837284D0F16006711CD /* NavigationInSwiftUIUITestsLaunchTests.swift */,
 			);
 			path = NavigationInSwiftUIUITests;
+			sourceTree = "<group>";
+		};
+		F54DCA4F285786AE004C49CE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F5BD0F47285670360044AD96 /* OnboardingCoordinatorScreen+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F54DCA50285786B7004C49CE /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				F512C27228567DE500EE00D5 /* UserRepositoryProtocolMock.swift */,
+				F54DCA4D28577875004C49CE /* EmailValidatingMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		F54DCA51285786C1004C49CE /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F54BC82B284D0F16006711CD /* OnboardingRoutesProviderTests.swift */,
+				F54DCA4B285777DB004C49CE /* CredentialsViewModelTests.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		F579AF7A285123A100773E6A /* Models */ = {
